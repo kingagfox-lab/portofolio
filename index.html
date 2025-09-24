@@ -2,28 +2,39 @@
 <html lang="id">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Portofolio Fotografi & Sinematik</title>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+
+    <!-- Styles -->
     <link rel="stylesheet" href="style.css" />
   </head>
+
   <body>
+    <!-- ===== Header ===== -->
     <header>
-      <div class="container">
-        <nav>
-          <div class="logo">MY PORTOFOLIO</div>
-          <ul class="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">Tentang Saya</a></li>
-            <li><a href="#portfolio">Portofolio</a></li>
-            <li><a href="#contact">Kontak</a></li>
-          </ul>
-        </nav>
+      <div class="container nav">
+        <div class="logo">MY PORTOFOLIO</div>
+        <button class="hamburger" aria-label="Toggle navigation">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+        <ul class="nav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">Tentang Saya</a></li>
+          <li><a href="#portfolio">Portofolio</a></li>
+          <li><a href="#contact">Kontak</a></li>
+        </ul>
       </div>
     </header>
+
+    <!-- ===== Hero ===== -->
     <section id="home" class="hero">
       <div class="container">
         <div class="hero-content fade-in">
@@ -33,14 +44,16 @@
             sinematografi. Saya senang mengabadikan keindahan senja dan
             kehangatan cahaya pagi melalui lensa kamera.
           </p>
-          <a href="#portfolio" class="btn">About me</a>
+          <a href="#about" class="btn">About me</a>
         </div>
       </div>
     </section>
-    <section id="about" class="about">
+
+    <!-- ===== About ===== -->
+    <section id="about" class="about section">
       <div class="container">
         <h2 class="section-title">Tentang Saya</h2>
-        <div class="about-content">
+        <div class="about-wrap">
           <div class="about-img">
             <img src="foto profil.jpg" alt="Foto Profil" />
           </div>
@@ -68,147 +81,116 @@
         </div>
       </div>
     </section>
-    <section id="portfolio" class="portfolio">
+
+    <!-- ===== Portfolio ===== -->
+    <section id="portfolio" class="portfolio section">
       <div class="container">
         <h2 class="section-title">Portofolio Saya</h2>
 
-        <div class="filter-section">
-          <div class="filter-anchor" id="all"></div>
-          <div class="filter-anchor" id="senja"></div>
-          <div class="filter-anchor" id="pagi"></div>
-          <div class="filter-anchor" id="sinematik"></div>
+        <div class="portfolio-filters">
+          <button class="filter-btn active" data-filter="all">Semua</button>
+          <button class="filter-btn" data-filter="senja">Sekolah</button>
+          <button class="filter-btn" data-filter="pagi">Alam</button>
+          <button class="filter-btn" data-filter="sinematik">Landscape</button>
+        </div>
 
-          <div class="portfolio-filters">
-            <a href="#all" class="filter-btn active">Semua</a>
-            <a href="#senja" class="filter-btn">Sekolah</a>
-            <a href="#pagi" class="filter-btn">Alam</a>
-            <a href="#sinematik" class="filter-btn">Landscape</a>
+        <div class="portfolio-grid" id="grid">
+          <div class="portfolio-item" data-category="senja">
+            <img src="awan1.jpg" alt="Senja di Pantai" />
+            <div class="portfolio-overlay">
+              <div class="portfolio-info">
+                <h3>Foto awan</h3>
+                <p>Fotografi random</p>
+              </div>
+            </div>
           </div>
 
-          <div class="portfolio-grid">
-            <div class="portfolio-item" data-category="senja">
-              <img src="awan1.jpg" alt="Senja di Pantai" />
-              <div class="portfolio-overlay">
-                <div class="portfolio-info">
-                  <h3>Foto awan</h3>
-                  <p>Fotografi random</p>
-                </div>
+          <div class="portfolio-item" data-category="pagi">
+            <img src="tanaman merah.jpg" alt="Cahaya Pagi di Hutan" />
+            <div class="portfolio-overlay">
+              <div class="portfolio-info">
+                <h3>tanaman</h3>
+                <p>Fotografi Alam</p>
               </div>
             </div>
-            <div class="portfolio-item" data-category="pagi">
-              <img src="tanaman merah.jpg" alt="Cahaya Pagi di Hutan" />
-              <div class="portfolio-overlay">
-                <div class="portfolio-info">
-                  <h3>tanaman</h3>
-                  <p>Fotografi Alam</p>
-                </div>
+          </div>
+
+          <div class="portfolio-item" data-category="sinematik">
+            <img src="masjid.jpg" alt="Adegan Sinematik" />
+            <div class="portfolio-overlay">
+              <div class="portfolio-info">
+                <h3>Masjid dan awan</h3>
+                <p>foto landscape</p>
               </div>
             </div>
-            <div class="portfolio-item" data-category="sinematik">
-              <img src="masjid.jpg" alt="Adegan Sinematik" />
-              <div class="portfolio-overlay">
-                <div class="portfolio-info">
-                  <h3>Masjid dan awan</h3>
-                  <p>foto landscape</p>
-                </div>
+          </div>
+
+          <div class="portfolio-item" data-category="senja">
+            <img src="basket.jpg" alt="Kota di Senja Hari" />
+            <div class="portfolio-overlay">
+              <div class="portfolio-info">
+                <h3>basket</h3>
+                <p>Outdoor</p>
               </div>
             </div>
-            <div class="portfolio-item" data-category="senja">
-              <img src="basket.jpg" alt="Kota di Senja Hari" />
-              <div class="portfolio-overlay">
-                <div class="portfolio-info">
-                  <h3>basket</h3>
-                  <p>Outdoor</p>
-                </div>
+          </div>
+
+          <div class="portfolio-item" data-category="pagi">
+            <img src="gambar pohon.jpg" alt="Danau di Pagi Hari" />
+            <div class="portfolio-overlay">
+              <div class="portfolio-info">
+                <h3>Foto pepohonan</h3>
+                <p>Fotografi Alam</p>
               </div>
             </div>
-            <div class="portfolio-item" data-category="pagi">
-              <img src="gambar pohon.jpg" alt="Danau di Pagi Hari" />
-              <div class="portfolio-overlay">
-                <div class="portfolio-info">
-                  <h3>Foto pepohonan</h3>
-                  <p>Fotografi Alam</p>
-                </div>
-              </div>
-            </div>
-            <div class="portfolio-item" data-category="sinematik">
-              <img src="reynu.jpg" alt="Produksi Film" />
-              <div class="portfolio-overlay">
-                <div class="portfolio-info">
-                  <h3>Friend</h3>
-                  <p>Olahraga</p>
-                </div>
+          </div>
+
+          <div class="portfolio-item" data-category="sinematik">
+            <img src="reynu.jpg" alt="Produksi Film" />
+            <div class="portfolio-overlay">
+              <div class="portfolio-info">
+                <h3>Friend</h3>
+                <p>Olahraga</p>
               </div>
             </div>
           </div>
         </div>
       </div>
     </section>
-    <section id="contact" class="contact">
+
+    <!-- ===== Contact ===== -->
+    <section id="contact" class="contact section">
       <div class="container">
         <h2 class="section-title">Hubungi Saya</h2>
-        <div class="contact-content">
+        <div class="contact-wrap">
           <div class="contact-info">
             <div class="contact-item">
-              <div class="contact-icon">
-                <i class="fas fa-map-marker-alt"></i>
-              </div>
-              <div>
-                <h3>Lokasi</h3>
-                <p>Surakarta, Indonesia</p>
-              </div>
+              <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+              <div><h3>Lokasi</h3><p>Surakarta, Indonesia</p></div>
             </div>
             <div class="contact-item">
-              <div class="contact-icon">
-                <i class="fas fa-envelope"></i>
-              </div>
-              <div>
-                <h3>Email</h3>
-                <p>kingagfox@email.com</p>
-              </div>
+              <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+              <div><h3>Email</h3><p>kingagfox@email.com</p></div>
             </div>
             <div class="contact-item">
-              <div class="contact-icon">
-                <i class="fas fa-phone"></i>
-              </div>
-              <div>
-                <h3>Telepon</h3>
-                <p>+62 852-9845-9963</p>
-              </div>
+              <div class="contact-icon"><i class="fas fa-phone"></i></div>
+              <div><h3>Telepon</h3><p>+62 852-9845-9963</p></div>
             </div>
           </div>
+
           <div class="contact-form">
-            <form id="contactForm">
+            <form id="contactForm" onsubmit="event.preventDefault(); alert('Terima kasih! Pesan Anda telah terkirim.'); this.reset();">
               <div class="form-group">
-                <input
-                  type="text"
-                  class="form-control"
-                  placeholder="Nama Anda"
-                  required
-                />
+                <input type="text" class="form-control" placeholder="Nama Anda" required />
               </div>
               <div class="form-group">
-                <input
-                  type="email"
-                  class="form-control"
-                  placeholder="Email Anda"
-                  required
-                />
+                <input type="email" class="form-control" placeholder="Email Anda" required />
               </div>
               <div class="form-group">
-                <input
-                  type="text"
-                  class="form-control"
-                  placeholder="Subjek"
-                  required
-                />
+                <input type="text" class="form-control" placeholder="Subjek" required />
               </div>
               <div class="form-group">
-                <textarea
-                  class="form-control"
-                  placeholder="Pesan Anda"
-                  required
-                ></textarea>
+                <textarea class="form-control" placeholder="Pesan Anda" required></textarea>
               </div>
               <button type="submit" class="btn">Kirim Pesan</button>
             </form>
@@ -216,21 +198,52 @@
         </div>
       </div>
     </section>
+
+    <!-- ===== Footer ===== -->
     <footer>
       <div class="container">
         <div class="social-links">
-          <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
-          <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
-          <a href="#" class="social-link"><i class="fab fa-tiktok"></i></a>
-          <a href="#" class="social-link"><i class="fab fa-behance"></i></a>
+          <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="social-link" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          <a href="#" class="social-link" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+          <a href="#" class="social-link" aria-label="Behance"><i class="fab fa-behance"></i></a>
         </div>
         <p class="copyright">
-          &copy; 2025 Portofolio Fotografi & Sinematik. Dibuat dengan penuh
-          passion.
+          &copy; 2025 Portofolio Fotografi & Sinematik. Dibuat dengan penuh passion.
         </p>
       </div>
     </footer>
+
+    <script>
+      // Mobile nav toggle
+      const burger = document.querySelector('.hamburger');
+      const menu   = document.querySelector('.nav-links');
+      burger?.addEventListener('click', () => menu.classList.toggle('open'));
+
+      // Tutup menu saat klik link (biar gak nutup konten)
+      document.querySelectorAll('.nav-links a').forEach(a => {
+        a.addEventListener('click', () => menu.classList.remove('open'));
+      });
+
+      // Tutup menu saat pindah ke desktop
+      addEventListener('resize', () => { if (innerWidth > 860) menu.classList.remove('open'); });
+
+      // Filter portfolio
+      const filterButtons = document.querySelectorAll('.filter-btn');
+      const items = document.querySelectorAll('.portfolio-item');
+
+      // Tampilkan semua saat load
+      items.forEach(el => el.style.display = 'block');
+
+      filterButtons.forEach(btn => btn.addEventListener('click', () => {
+        filterButtons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const target = btn.dataset.filter;
+        items.forEach(card => {
+          const show = target === 'all' || card.dataset.category === target;
+          card.style.display = show ? 'block' : 'none';
+        });
+      }));
+    </script>
   </body>
 </html>
-
-
